@@ -554,6 +554,11 @@
 </head>
 
 <body>
+  <div class="room-scene" aria-hidden="true">
+  <div class="window-light"></div>
+  <div class="curtain curtain-left"></div>
+  <div class="curtain curtain-right"></div>
+</div>
   <main class="page">
     <header class="profile">
   <div class="cat-mark">
@@ -696,4 +701,127 @@
   color: rgba(94, 143, 126, 0.34);
   content: "✦";
   font-size: 12px;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+.page {
+  position: relative;
+  z-index: 2;
+}
+
+.room-scene {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.room-scene::before {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  width: 720px;
+  height: 620px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 225, 238, 0.2) 52%,
+      transparent 72%
+    );
+  content: "";
+  transform: translateX(-50%);
+}
+
+.window-light {
+  position: absolute;
+  top: 55px;
+  left: clamp(32px, 7vw, 120px);
+  width: clamp(220px, 27vw, 360px);
+  height: min(53vh, 480px);
+  min-height: 330px;
+  border: 8px solid rgba(255, 255, 255, 0.44);
+  border-radius: 170px 170px 28px 28px;
+  opacity: 0.48;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.82),
+      rgba(255, 225, 237, 0.3) 55%,
+      rgba(220, 211, 250, 0.28)
+    );
+  box-shadow:
+    0 0 55px rgba(255, 255, 255, 0.58),
+    inset 0 0 32px rgba(255, 255, 255, 0.48);
+}
+
+.window-light::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 5px;
+  background: rgba(255, 255, 255, 0.42);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.window-light::after {
+  position: absolute;
+  top: 48%;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.42);
+  content: "";
+}
+
+.curtain {
+  position: absolute;
+  top: -80px;
+  width: clamp(190px, 24vw, 360px);
+  height: 78vh;
+  opacity: 0.17;
+  filter: blur(2px);
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(242, 172, 199, 0.5) 0 24px,
+      rgba(255, 230, 239, 0.2) 24px 48px
+    );
+}
+
+.curtain-left {
+  left: -120px;
+  border-radius: 0 0 80% 0;
+  transform: rotate(-6deg);
+}
+
+.curtain-right {
+  right: -120px;
+  border-radius: 0 0 0 80%;
+  transform: rotate(6deg);
+}
+
+@media (max-width: 700px) {
+  .window-light {
+    top: 36px;
+    left: 50%;
+    width: 82vw;
+    height: 370px;
+    min-height: 0;
+    opacity: 0.28;
+    transform: translateX(-50%);
+  }
+
+  .curtain {
+    width: 56vw;
+    opacity: 0.11;
+  }
 }
