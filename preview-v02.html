@@ -595,6 +595,19 @@
   </a>
 
   <div class="featured-links">
+    <a class="link link-featured ecpay-link"
+   href="https://page.cashier.ecpay.com.tw/forms/d9G6"
+   target="_blank"
+   rel="noopener noreferrer">
+  <span class="icon">NT$</span>
+
+  <span class="link-text">
+    <strong>台灣購買｜綠界</strong>
+    <span>新台幣付款・Email 收件</span>
+  </span>
+
+  <span class="arrow">›</span>
+</a>
     <a class="link link-featured booth-link"
        href="https://yinmeow.booth.pm/"
        target="_blank"
@@ -656,3 +669,31 @@
   </main>
 </body>
 </html>
+
+.ecpay-link {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(250, 255, 253, 0.56),
+      rgba(220, 245, 235, 0.42)
+    );
+}
+
+.ecpay-link .icon {
+  color: #5e8f7e;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(222, 246, 237, 0.92),
+      rgba(190, 228, 215, 0.82)
+    );
+}
+
+.ecpay-link::after {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: rgba(94, 143, 126, 0.34);
+  content: "✦";
+  font-size: 12px;
+}
