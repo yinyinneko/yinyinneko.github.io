@@ -719,25 +719,48 @@ left: max(28px, calc(50% - 680px));
     height: 136px;
   }
 }
-   /* 稍微明顯的背景光點 */
+  /* 白色亮心與柔和光暈 */
 .room-scene::after {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 14% 18%, rgba(215, 145, 180, 0.72) 0 2.5px, transparent 5px),
-    radial-gradient(circle at 23% 48%, rgba(255, 255, 255, 0.95) 0 3px, transparent 6px),
-    radial-gradient(circle at 28% 72%, rgba(226, 166, 199, 0.7) 0 2.5px, transparent 5px),
-    radial-gradient(circle at 39% 27%, rgba(203, 178, 235, 0.65) 0 2px, transparent 5px),
-    radial-gradient(circle at 61% 16%, rgba(228, 156, 192, 0.68) 0 2.5px, transparent 5px),
-    radial-gradient(circle at 70% 54%, rgba(255, 255, 255, 0.95) 0 3px, transparent 6px),
-    radial-gradient(circle at 77% 72%, rgba(200, 175, 235, 0.62) 0 2.5px, transparent 5px),
-    radial-gradient(circle at 87% 28%, rgba(221, 148, 184, 0.68) 0 2.5px, transparent 5px),
-    radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.92) 0 3px, transparent 6px);
-  content: "";
-  opacity: 0.72;
-  filter: drop-shadow(0 0 7px rgba(224, 153, 188, 0.58));
-}
+    radial-gradient(circle at 14% 18%,
+      rgba(255, 255, 255, 0.95) 0 2px,
+      rgba(248, 190, 216, 0.25) 3px,
+      transparent 8px),
 
+    radial-gradient(circle at 27% 70%,
+      rgba(255, 255, 255, 0.92) 0 2px,
+      rgba(245, 183, 211, 0.22) 3px,
+      transparent 7px),
+
+    radial-gradient(circle at 39% 27%,
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      rgba(222, 207, 248, 0.22) 3px,
+      transparent 7px),
+
+    radial-gradient(circle at 62% 17%,
+      rgba(255, 255, 255, 0.95) 0 2px,
+      rgba(248, 190, 216, 0.24) 3px,
+      transparent 8px),
+
+    radial-gradient(circle at 72% 61%,
+      rgba(255, 255, 255, 0.92) 0 2px,
+      rgba(220, 205, 247, 0.2) 3px,
+      transparent 7px),
+
+    radial-gradient(circle at 86% 30%,
+      rgba(255, 255, 255, 0.95) 0 2px,
+      rgba(248, 190, 216, 0.23) 3px,
+      transparent 8px),
+
+    radial-gradient(circle at 91% 80%,
+      rgba(255, 255, 255, 0.9) 0 1.5px,
+      rgba(244, 185, 212, 0.2) 3px,
+      transparent 7px);
+  content: "";
+  opacity: 0.78;
+}
 /* 加強窗戶周圍的柔光 */
 .window-light {
   box-shadow:
