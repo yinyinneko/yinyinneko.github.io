@@ -768,6 +768,159 @@ left: max(28px, calc(50% - 680px));
     30px 35px 95px rgba(255, 205, 226, 0.25),
     inset 0 0 36px rgba(255, 255, 255, 0.52);
 }
+    /* 個人資料底版的粉色發光愛心 */
+.profile-hearts {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.profile-hearts span {
+  position: absolute;
+  color: rgba(247, 181, 209, 0.76);
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.95),
+    0 0 10px rgba(237, 151, 189, 0.58),
+    0 0 18px rgba(237, 151, 189, 0.28);
+}
+
+.profile-hearts span:nth-child(1) {
+  top: 24%;
+  left: 8%;
+  font-size: 13px;
+  transform: rotate(-12deg);
+}
+
+.profile-hearts span:nth-child(2) {
+  top: 52%;
+  left: 15%;
+  font-size: 8px;
+  opacity: 0.7;
+}
+
+.profile-hearts span:nth-child(3) {
+  bottom: 12%;
+  left: 7%;
+  font-size: 11px;
+  transform: rotate(10deg);
+}
+
+.profile-hearts span:nth-child(4) {
+  top: 22%;
+  right: 9%;
+  font-size: 9px;
+  opacity: 0.72;
+}
+
+.profile-hearts span:nth-child(5) {
+  top: 50%;
+  right: 14%;
+  font-size: 14px;
+  transform: rotate(12deg);
+}
+
+.profile-hearts span:nth-child(6) {
+  right: 7%;
+  bottom: 13%;
+  font-size: 8px;
+  opacity: 0.68;
+}
+
+/* 確保文字顯示在愛心前面 */
+.profile > :not(.cat-mark):not(.profile-hearts) {
+  position: relative;
+  z-index: 1;
+}
+
+/* 網址方框右側的散落星星 */
+.link {
+  position: relative;
+  overflow: hidden;
+}
+
+.link-stars {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 34px;
+  bottom: 0;
+  width: 118px;
+  pointer-events: none;
+}
+
+.link-stars span {
+  position: absolute;
+  color: rgba(255, 251, 221, 0.92);
+  line-height: 1;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 1),
+    0 0 9px rgba(255, 222, 150, 0.72),
+    0 0 16px rgba(241, 174, 205, 0.42);
+}
+
+.link-stars span:nth-child(1) {
+  top: 17%;
+  left: 9%;
+  font-size: 9px;
+}
+
+.link-stars span:nth-child(2) {
+  top: 56%;
+  left: 34%;
+  font-size: 6px;
+  opacity: 0.72;
+  transform: rotate(15deg);
+}
+
+.link-stars span:nth-child(3) {
+  top: 25%;
+  left: 61%;
+  font-size: 12px;
+  transform: rotate(10deg);
+}
+
+.link-stars span:nth-child(4) {
+  top: 66%;
+  left: 82%;
+  font-size: 7px;
+  opacity: 0.78;
+  transform: rotate(-12deg);
+}
+
+/* 文字、圖示及箭頭保持在星星前方 */
+.link .icon,
+.link .link-text,
+.link .arrow {
+  position: relative;
+  z-index: 1;
+}
+
+/* 取代原本每個方框右上角的單一符號 */
+.link-primary::after,
+.link-featured::after {
+  content: none;
+}
+
+/* 手機版減少星星占用範圍 */
+@media (max-width: 480px) {
+  .profile-hearts span {
+    opacity: 0.6;
+  }
+
+  .link-stars {
+    right: 27px;
+    width: 82px;
+    opacity: 0.62;
+  }
+
+  .link-stars span:nth-child(2),
+  .link-stars span:nth-child(4) {
+    display: none;
+  }
+}
   </style>
 </head>
 
@@ -820,7 +973,12 @@ left: max(28px, calc(50% - 680px));
       <strong>Twitch 實況</strong>
       <span>一起聊天、玩遊戲與參加活動</span>
     </span>
-
+<span class="link-stars" aria-hidden="true">
+  <span>✦</span>
+  <span>★</span>
+  <span>✦</span>
+  <span>★</span>
+</span>
     <span class="arrow">›</span>
   </a>
 
@@ -835,7 +993,12 @@ left: max(28px, calc(50% - 680px));
     <strong>台灣購買｜綠界</strong>
     <span>新台幣付款・Email 收件</span>
   </span>
-
+<span class="link-stars" aria-hidden="true">
+  <span>✦</span>
+  <span>★</span>
+  <span>✦</span>
+  <span>★</span>
+</span>
   <span class="arrow">›</span>
 </a>
     <a class="link link-featured booth-link"
@@ -848,7 +1011,12 @@ left: max(28px, calc(50% - 680px));
   <strong>海外購買｜BOOTH</strong>
   <span>海外購買・日幣計價</span>
 </span>
-
+<span class="link-stars" aria-hidden="true">
+  <span>✦</span>
+  <span>★</span>
+  <span>✦</span>
+  <span>★</span>
+</span>
       <span class="arrow">›</span>
     </a>
 
@@ -862,7 +1030,12 @@ left: max(28px, calc(50% - 680px));
         <strong>繪圖委託</strong>
         <span>委託項目、價格與注意事項</span>
       </span>
-
+<span class="link-stars" aria-hidden="true">
+  <span>✦</span>
+  <span>★</span>
+  <span>✦</span>
+  <span>★</span>
+</span>
       <span class="arrow">›</span>
     </a>
   </div>
