@@ -255,6 +255,93 @@
         transition: none;
       }
     }
+    .link-primary {
+  position: relative;
+  grid-template-columns: 58px 1fr 28px;
+  min-height: 90px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  color: white;
+  background:
+    linear-gradient(
+      135deg,
+      #ef91b6 0%,
+      #d997c8 48%,
+      #bda0e6 100%
+    );
+  box-shadow:
+    0 15px 32px rgba(202, 122, 164, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.link-primary::before {
+  position: absolute;
+  right: -35px;
+  bottom: -75px;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.25),
+      transparent 68%
+    );
+  content: "";
+}
+
+.link-primary::after {
+  position: absolute;
+  top: 12px;
+  right: 46px;
+  color: rgba(255, 255, 255, 0.6);
+  content: "✦";
+  font-size: 13px;
+}
+
+.link-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+.link-primary .icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  backdrop-filter: blur(5px);
+}
+
+.link-primary .link-text strong {
+  color: white;
+  font-size: 18px;
+}
+
+.link-primary .link-text span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+}
+
+.link-primary .arrow {
+  color: white;
+  font-size: 25px;
+  transition: transform 160ms ease;
+}
+
+.link-primary:hover {
+  border-color: white;
+  box-shadow:
+    0 18px 38px rgba(202, 122, 164, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+.link-primary:hover .arrow {
+  transform: translateX(4px);
+}
   </style>
 </head>
 
@@ -285,7 +372,7 @@
 </header>
 
     <nav class="links" aria-label="小茵喵的主要連結">
-      <a class="link" href="https://www.twitch.tv/yinyin_neko"
+      <a class="link link-primary" href="https://www.twitch.tv/yinyin_neko"
          target="_blank" rel="noopener noreferrer">
         <span class="icon">TW</span>
         <span class="link-text">
