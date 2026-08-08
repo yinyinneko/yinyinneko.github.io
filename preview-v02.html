@@ -342,6 +342,147 @@
 .link-primary:hover .arrow {
   transform: translateX(4px);
 }
+ .featured-links {
+  display: grid;
+  gap: 13px;
+}
+
+.link-featured {
+  position: relative;
+  min-height: 78px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 250, 252, 0.96),
+      rgba(255, 235, 243, 0.88)
+    );
+}
+
+.link-featured .icon {
+  color: #b96e8c;
+  background:
+    linear-gradient(145deg, #ffe0eb, #ecc2d5);
+}
+
+.link-featured::after {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: rgba(216, 136, 166, 0.35);
+  font-size: 12px;
+}
+
+.booth-link::after {
+  content: "♡";
+}
+
+.commission-link::after {
+  content: "✦";
+}
+
+.commission-link {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 251, 252, 0.96),
+      rgba(244, 237, 255, 0.9)
+    );
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 112px;
+  padding: 15px 8px;
+  border: 1px solid rgba(227, 155, 182, 0.28);
+  border-radius: 21px;
+  color: #755463;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+  text-align: center;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.social-card:hover {
+  border-color: rgba(218, 126, 159, 0.58);
+  box-shadow: 0 16px 32px rgba(177, 116, 141, 0.22);
+  transform: translateY(-4px);
+}
+
+.social-card:focus-visible {
+  outline: 3px solid rgba(201, 120, 149, 0.4);
+  outline-offset: 3px;
+}
+
+.social-card strong {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.youtube-icon {
+  background: linear-gradient(145deg, #f29aad, #df7189);
+}
+
+.instagram-icon {
+  background:
+    linear-gradient(
+      145deg,
+      #c89ae8,
+      #e489b4 55%,
+      #efb47d
+    );
+}
+
+.x-icon {
+  background: linear-gradient(145deg, #947781, #5e4851);
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    gap: 8px;
+  }
+
+  .social-card {
+    min-height: 98px;
+    padding: 12px 4px;
+    border-radius: 17px;
+  }
+
+  .social-card strong {
+    font-size: 11px;
+  }
+
+  .social-icon {
+    width: 39px;
+    height: 39px;
+    border-radius: 13px;
+  }
+}
   </style>
 </head>
 
@@ -372,67 +513,76 @@
 </header>
 
     <nav class="links" aria-label="小茵喵的主要連結">
-      <a class="link link-primary" href="https://www.twitch.tv/yinyin_neko"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">TW</span>
-        <span class="link-text">
-          <strong>Twitch 實況</strong>
-          <span>一起聊天、玩遊戲與參加活動</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
+  <a class="link link-primary"
+     href="https://www.twitch.tv/yinyin_neko"
+     target="_blank"
+     rel="noopener noreferrer">
+    <span class="icon">TW</span>
 
-      <a class="link" href="https://www.youtube.com/channel/UC9KsFvW1YYufRUFjG9OoMOA"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">YT</span>
-        <span class="link-text">
-          <strong>YouTube</strong>
-          <span>影片、精華與創作紀錄</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
+    <span class="link-text">
+      <strong>Twitch 實況</strong>
+      <span>一起聊天、玩遊戲與參加活動</span>
+    </span>
 
-      <a class="link" href="https://www.instagram.com/draw_taigachan/"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">IG</span>
-        <span class="link-text">
-          <strong>Instagram</strong>
-          <span>插畫與日常創作分享</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
+    <span class="arrow">›</span>
+  </a>
 
-      <a class="link" href="https://x.com/yinyin_neko"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">X</span>
-        <span class="link-text">
-          <strong>X／Twitter</strong>
-          <span>可能掉落日常廢文</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
+  <div class="featured-links">
+    <a class="link link-featured booth-link"
+       href="https://yinmeow.booth.pm/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="icon">SHOP</span>
 
-      <a class="link shop" href="https://yinmeow.booth.pm/"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">SHOP</span>
-        <span class="link-text">
-          <strong>BOOTH 商店</strong>
-          <span>實況素材與創作商品</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
+      <span class="link-text">
+        <strong>BOOTH 商店</strong>
+        <span>實況素材與創作商品</span>
+      </span>
 
-      <a class="link shop" href="https://truthful-corn-fk29vz.mystrikingly.com/"
-         target="_blank" rel="noopener noreferrer">
-        <span class="icon">WORK</span>
-        <span class="link-text">
-          <strong>繪圖委託</strong>
-          <span>委託項目、價格與注意事項</span>
-        </span>
-        <span class="arrow">›</span>
-      </a>
-    </nav>
+      <span class="arrow">›</span>
+    </a>
 
+    <a class="link link-featured commission-link"
+       href="https://truthful-corn-fk29vz.mystrikingly.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="icon">ART</span>
+
+      <span class="link-text">
+        <strong>繪圖委託</strong>
+        <span>委託項目、價格與注意事項</span>
+      </span>
+
+      <span class="arrow">›</span>
+    </a>
+  </div>
+
+  <div class="social-links">
+    <a class="social-card"
+       href="https://www.youtube.com/channel/UC9KsFvW1YYufRUFjG9OoMOA"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="social-icon youtube-icon">YT</span>
+      <strong>YouTube</strong>
+    </a>
+
+    <a class="social-card"
+       href="https://www.instagram.com/draw_taigachan/"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="social-icon instagram-icon">IG</span>
+      <strong>Instagram</strong>
+    </a>
+
+    <a class="social-card"
+       href="https://x.com/yinyin_neko"
+       target="_blank"
+       rel="noopener noreferrer">
+      <span class="social-icon x-icon">X</span>
+      <strong>X／Twitter</strong>
+    </a>
+  </div>
+</nav>
     <footer>
       © 2026 Yinyin Neko
     </footer>
